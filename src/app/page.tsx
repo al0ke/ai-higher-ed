@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Brain, Cpu, GraduationCap, Users, BookOpen, Clock, Globe, Lightbulb, ChevronRight, ChevronLeft, Sparkles, Target, Shield } from "lucide-react";
+import { Brain, Cpu, GraduationCap, Users, BookOpen, Clock, Globe, Lightbulb, ChevronRight, ChevronLeft, Sparkles, Target, Shield, Zap, Bot, Rocket, Code, Terminal } from "lucide-react";
 
 export default function AIHigherEdPresentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -45,15 +45,33 @@ export default function AIHigherEdPresentation() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-slate-900 to-purple-950 text-white overflow-hidden">
-      {/* Animated Background */}
+      {/* Animated Background - Bolt Style */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/5 rounded-full blur-3xl animate-pulse delay-2000" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-yellow-400/5 rounded-full blur-3xl animate-pulse delay-2000" />
+        <div className="absolute top-20 right-20 w-32 h-32 bg-pink-500/10 rounded-full blur-2xl animate-pulse delay-500" />
+        <div className="absolute bottom-32 left-20 w-48 h-48 bg-blue-500/10 rounded-full blur-2xl animate-pulse delay-1500" />
       </div>
 
-      {/* Grid Pattern */}
-      <div className="fixed inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+      {/* Cyber Grid Pattern */}
+      <div className="fixed inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:60px_60px] pointer-events-none" />
+
+      {/* Floating Particles */}
+      <div className="fixed inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-400/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col">
@@ -127,31 +145,49 @@ export default function AIHigherEdPresentation() {
   );
 }
 
-// Slide 1: Title
+// Slide 1: Title - Enhanced with Bolt Style
 function TitleSlide() {
   return (
-    <div className="text-center space-y-8">
-      <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-3xl mb-4 border border-cyan-500/30">
-        <Cpu className="w-12 h-12 text-cyan-400" />
+    <div className="text-center space-y-6">
+      {/* Bolt Badge */}
+      <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full mb-4">
+        <Zap className="w-4 h-4 text-yellow-400" />
+        <span className="text-sm font-medium text-yellow-300">Powered by b0lt 🤖</span>
       </div>
 
-      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+      <div className="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl mb-6 border border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
+        <div className="relative">
+          <Cpu className="w-14 h-14 text-cyan-400 animate-pulse" />
+          <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping" />
+        </div>
+      </div>
+
+      <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
         Artificial Intelligence
       </h1>
       <h2 className="text-3xl md:text-4xl font-semibold text-slate-300">
         in Higher Education
       </h2>
 
-      <div className="flex items-center justify-center gap-4 text-slate-400">
+      <div className="flex items-center justify-center gap-4 text-slate-400 mt-6">
         <Shield className="w-5 h-5" />
         <span>Responsibility</span>
         <span className="text-slate-600">•</span>
         <Target className="w-5 h-5" />
         <span>Academic Accountability</span>
+        <span className="text-slate-600">•</span>
+        <Bot className="w-5 h-5" />
+        <span>Future Ready</span>
       </div>
 
-      <div className="pt-8 border-t border-slate-800">
+      <div className="pt-8 border-t border-slate-800/50 mt-8">
         <p className="text-lg text-slate-400">Presented by</p>        <p className="text-2xl font-semibold text-white mt-2">Kahlil, Julie, Lina & Ali</p>
+        <p className="text-sm text-slate-500 mt-1">EDUC-1300 Learning Frameworks</p>
+      </div>
+
+      {/* Bolt Sign-off */}
+      <div className="text-xs text-slate-600 italic">
+        "Believe it. We're going to the top." — b0lt ⚡
       </div>
     </div>
   );
@@ -336,36 +372,49 @@ function StudentBenefitsSlide() {
   );
 }
 
-// Slide 5: Activity
+// Slide 5: Activity - Enhanced with Bolt Energy
 function ActivitySlide() {
   return (
-    <div className="text-center space-y-8">
-      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500/20 to-cyan-500/20 rounded-2xl mb-4 border border-green-500/30">
+    <div className="text-center space-y-6">
+      <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-green-500/20 to-cyan-500/20 rounded-2xl mb-4 border border-green-500/30 animate-bounce">
         <Users className="w-10 h-10 text-green-400" />
       </div>
 
       <h2 className="text-4xl md:text-5xl font-bold text-white">Class Activity</h2>
+      <p className="text-xl text-slate-400">Time to share your thoughts! 🚀</p>
 
       <div className="max-w-3xl mx-auto space-y-6">
-        <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-8">
-          <div className="flex items-center justify-center gap-4 mb-6">
+        <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-6">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <div className="flex -space-x-4">
-              <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center border-2 border-slate-800">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-full flex items-center justify-center border-2 border-slate-800 animate-pulse">
                 <span className="text-cyan-400 font-bold">1</span>
               </div>
-              <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center border-2 border-slate-800">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center border-2 border-slate-800 animate-pulse delay-200">
                 <span className="text-purple-400 font-bold">2</span>
               </div>
             </div>
             <h3 className="text-2xl font-semibold text-cyan-300">Step 1: Pick a Partner</h3>
-          </div>          <p className="text-lg text-slate-300">Find a classmate to discuss with. Teams of 2 work best!</p>
+          </div>          <p className="text-lg text-slate-300">Find a classmate to discuss with. Teams of 2 work best for deep conversation!</p>
         </div>
 
-        <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/30 rounded-2xl p-8">
-          <h3 className="text-2xl font-semibold text-white mb-6">Step 2: Discuss</h3>          
-          <blockquote className="text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">
+        <div className="bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10 border border-cyan-500/30 rounded-2xl p-6">
+          <div className="flex items-center justify-center gap-2 mb-4">
+            <Brain className="w-6 h-6 text-cyan-400" />
+            <h3 className="text-2xl font-semibold text-white">Step 2: Discuss</h3>
+          </div>          
+          <blockquote className="text-2xl md:text-3xl font-medium text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mb-4">
             "Do you think AI is beneficial or detrimental to society?"
           </blockquote>
+          <p className="text-slate-400">
+            Consider: Education, jobs, privacy, creativity, and the future
+          </p>
+        </div>
+
+        <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-2xl p-4">
+          <p className="text-sm text-yellow-300/80 italic">
+            💡 Pro tip: There are no wrong answers — just perspectives! Listen to understand, not to respond.
+          </p>
         </div>
       </div>
 
@@ -373,12 +422,16 @@ function ActivitySlide() {
         href="https://ai-opinion-drop.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl transition-all transform hover:scale-105"
+        className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 hover:from-cyan-400 hover:via-purple-400 hover:to-pink-400 text-white font-bold rounded-xl transition-all transform hover:scale-105 shadow-lg shadow-cyan-500/25"
       >
         <Sparkles className="w-5 h-5" />
         Share Your Opinion
-        <ChevronRight className="w-5 h-5" />
+        <Rocket className="w-5 h-5" />
       </a>
+
+      <p className="text-xs text-slate-500">
+        Your responses will appear live on the dashboard!
+      </p>
     </div>
   );
 }
