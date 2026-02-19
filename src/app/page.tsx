@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Brain, Cpu, GraduationCap, Users, BookOpen, Clock, Globe, Lightbulb, ChevronRight, ChevronLeft, Sparkles, Target, Shield, Zap, Bot, Rocket, Code, Terminal } from "lucide-react";
+import Image from "next/image";
 
 export default function AIHigherEdPresentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -155,11 +156,17 @@ function TitleSlide() {
         <span className="text-sm font-medium text-yellow-300">Powered by b0lt 🤖</span>
       </div>
 
-      <div className="inline-flex items-center justify-center w-28 h-28 bg-gradient-to-br from-cyan-500/20 via-purple-500/20 to-pink-500/20 rounded-3xl mb-6 border border-cyan-500/30 shadow-2xl shadow-cyan-500/20">
-        <div className="relative">
-          <Cpu className="w-14 h-14 text-cyan-400 animate-pulse" />
-          <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full animate-ping" />
-        </div>
+      {/* Hero Image */}
+      <div className="relative w-full max-w-lg mx-auto mb-6">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-2xl blur-xl" />
+        <Image
+          src="/2026-02-19-ai-education-hero.png"
+          alt="AI in Education"
+          width={600}
+          height={400}
+          className="relative rounded-2xl border border-cyan-500/30 shadow-2xl"
+          priority
+        />
       </div>
 
       <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
@@ -251,17 +258,17 @@ function WhatIsAISlide() {
 // Slide 3: History
 function HistorySlide() {
   return (
-    <div className="space-y-8">
-      <div className="flex items-center gap-4 mb-8">
+    <div className="space-y-6">
+      <div className="flex items-center gap-4 mb-4">
         <div className="p-3 bg-purple-500/10 rounded-xl border border-purple-500/20">
           <Clock className="w-8 h-8 text-purple-400" />
         </div>
         <h2 className="text-4xl font-bold text-white">The Birth of AI: 1950</h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 space-y-6">
-          <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-6">
+      <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-4">
+          <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-5">
             <div className="flex items-start gap-4">
               <div className="p-3 bg-cyan-500/10 rounded-xl">
                 <span className="text-3xl font-bold text-cyan-400">1950</span>
@@ -272,7 +279,7 @@ function HistorySlide() {
             </div>
           </div>
 
-          <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-6">
+          <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-5">
             <blockquote className="text-2xl font-medium text-slate-300 italic border-l-4 border-cyan-400 pl-6">
               "Can machines think?"
             </blockquote>
@@ -284,20 +291,33 @@ function HistorySlide() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-2xl p-6">
-          <h3 className="text-lg font-semibold text-cyan-300 mb-4">The Turing Test</h3>
-          <div className="space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400 font-bold">1</div>
-              <p className="text-sm text-slate-300">Human evaluator judges conversations</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 font-bold">2</div>
-              <p className="text-sm text-slate-300">One with human, one with machine</p>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400 font-bold">3</div>
-              <p className="text-sm text-slate-300">If evaluator can't distinguish → machine passes</p>
+        <div className="space-y-4">
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 to-cyan-500/10 rounded-2xl blur-xl" />
+            <Image
+              src="/2026-02-19-turing-history.png"
+              alt="Alan Turing Era Computer"
+              width={500}
+              height={350}
+              className="relative rounded-2xl border border-slate-700 shadow-xl"
+            />
+          </div>
+
+          <div className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-2xl p-4">
+            <h3 className="text-lg font-semibold text-cyan-300 mb-3">The Turing Test</h3>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-cyan-500/20 rounded-full flex items-center justify-center text-cyan-400 font-bold">1</div>
+                <p className="text-sm text-slate-300">Human evaluator judges conversations</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 font-bold">2</div>
+                <p className="text-sm text-slate-300">One with human, one with machine</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 bg-pink-500/20 rounded-full flex items-center justify-center text-pink-400 font-bold">3</div>
+                <p className="text-sm text-slate-300">If evaluator can't distinguish → machine passes</p>
+              </div>
             </div>
           </div>
         </div>
@@ -309,62 +329,74 @@ function HistorySlide() {
 // Slide 4: Why Students Should Care
 function StudentBenefitsSlide() {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-4 mb-6">
+    <div className="space-y-4">
+      <div className="flex items-center gap-4 mb-4">
         <div className="p-3 bg-pink-500/10 rounded-xl border border-pink-500/20">
           <GraduationCap className="w-8 h-8 text-pink-400" />
         </div>
         <h2 className="text-4xl font-bold text-white">Why Should College Students Care?</h2>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
-        <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4">
+      {/* Hero Image */}
+      <div className="relative w-full max-w-2xl mx-auto mb-4">
+        <div className="absolute inset-0 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-2xl blur-xl" />
+        <Image
+          src="/2026-02-19-students-ai.png"
+          alt="Students Using AI"
+          width={600}
+          height={300}
+          className="relative rounded-2xl border border-slate-700 shadow-xl w-full object-cover"
+        />
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-4">
+        <div className="bg-gradient-to-br from-cyan-500/10 to-cyan-600/5 border border-cyan-500/20 rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
             <BookOpen className="w-6 h-6 text-cyan-400" />
             <h3 className="text-xl font-semibold text-cyan-300">Academic Support</h3>
           </div>
-          <p className="text-slate-300">
+          <p className="text-slate-300 text-sm">
             AI tools help with studying, writing, tutoring, time management, and understanding difficult concepts — 
             especially valuable for students without extra academic support.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-500/10 to-purple-600/5 border border-purple-500/20 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="bg-gradient-to-br from-purple-500/10 to-purple-600/5 border border-purple-500/20 rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
             <Globe className="w-6 h-6 text-purple-400" />
             <h3 className="text-xl font-semibold text-purple-300">Career Readiness</h3>
           </div>
-          <p className="text-slate-300">
+          <p className="text-slate-300 text-sm">
             As industries become AI-driven, students who learn AI responsibly gain valuable skills, 
             increasing career opportunities and economic mobility.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-pink-500/10 to-pink-600/5 border border-pink-500/20 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="bg-gradient-to-br from-pink-500/10 to-pink-600/5 border border-pink-500/20 rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
             <Users className="w-6 h-6 text-pink-400" />
             <h3 className="text-xl font-semibold text-pink-300">Equity & Inclusion</h3>
           </div>
-          <p className="text-slate-300">
+          <p className="text-slate-300 text-sm">
             AI promotes equity by providing support to historically excluded voices, 
             potentially improving college completion rates when implemented thoughtfully.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 border border-yellow-500/20 rounded-2xl p-6">
-          <div className="flex items-center gap-3 mb-4">
+        <div className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 border border-yellow-500/20 rounded-2xl p-5">
+          <div className="flex items-center gap-3 mb-3">
             <Lightbulb className="w-6 h-6 text-yellow-400" />
             <h3 className="text-xl font-semibold text-yellow-300">Future Competitiveness</h3>
           </div>
-          <p className="text-slate-300">
+          <p className="text-slate-300 text-sm">
             Colleges embracing AI help students stay competitive in tomorrow's job market — 
             preparing them today for the workforce of tomorrow.
           </p>
         </div>
       </div>
 
-      <div className="bg-slate-800/30 border border-slate-700 rounded-xl p-4 text-center">
-        <p className="text-slate-400">
+      <div className="bg-slate-800/30 border border-slate-700 rounded-xl p-3 text-center">
+        <p className="text-sm text-slate-400">
           Source: <a href="https://completecollege.org" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">Complete College America</a> — AI for Student Success Initiative
         </p>
       </div>
